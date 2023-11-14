@@ -1,14 +1,11 @@
 # TODO  Напишите функцию count_letters
 def count_letters(text):
-    split_small_text = text.lower().split()
-    join_text = "".join(split_small_text)
+    split_small_text = text.lower()
     letters_in_text = {}
-    for letter in join_text:
+    for letter in split_small_text:
         if letter.isalpha():
-            if letter in letters_in_text:
-                letters_in_text[letter] += 1
-            else:
-                letters_in_text[letter] = 1
+            letters_in_text.setdefault(letter, 0)
+            letters_in_text[letter] += 1
     return letters_in_text
 
 # TODO Напишите функцию calculate_frequency
