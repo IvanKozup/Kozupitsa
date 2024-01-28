@@ -34,6 +34,7 @@ class Library:
         self.books = books
 
     def get_next_book_id(self):
+         # Метод, возвращающий идентификатор для добавления новой книги в библиотеку.
         if self.books is None:
             return 1
         else:
