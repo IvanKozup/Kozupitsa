@@ -40,11 +40,13 @@ class Library:
             return self.books[-1].id + 1
 
     def get_index_by_book_id(self, book_id: int):
+        # Метод, возвращающий индекс книги в списке, который хранится в атрибуте экземпляра класса
+        list_id = []
         for i, x in enumerate(self.books):
-            if x.id == book_id:
-                return i
-            else:
-                raise ValueError("Книги с запрашиваемым id не существует")
+            list_id.append(x.id)
+        if book_id in list_id:
+            return list_id.index(book_id)
+        else: raise ValueError("Книги с запрашиваемым id не существует")
 
 
 if __name__ == '__main__':
